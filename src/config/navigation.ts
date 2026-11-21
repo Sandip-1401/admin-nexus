@@ -5,3 +5,13 @@ export const navItems = [
   { label: "Analytics", href: "/analytics" },
   { label: "Settings", href: "/settings" },
 ];
+
+export const analyticsTabs = [
+  { label: "Revenue", href: "/analytics/revenue" },
+  { label: "Traffic", href: "/analytics/traffic" },
+];
+
+export const settingsNav = [
+  { label: "Profile", href: "/settings/profile" },
+  { label: "Security", href: "/settings/security" },
+];
