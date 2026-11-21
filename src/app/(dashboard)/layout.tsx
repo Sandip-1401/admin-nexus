@@ -1,5 +1,6 @@
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import Sidebar from "@/components/layout/Sidebar";
+import Topbar from "@/components/layout/Topbar";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
 export default function DashboardLayout({
   children,
@@ -9,10 +10,13 @@ export default function DashboardLayout({
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 bg-gray-100 p-6">
-        <Breadcrumbs />
-        {children}
-      </main>
+      <div className="flex flex-1 flex-col">
+        <Topbar />
+        <main className="flex-1 bg-gray-100 p-6">
+          <Breadcrumbs />
+          {children}
+        </main>
+      </div>
     </div>
   );
 }

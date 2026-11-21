@@ -35,3 +35,9 @@
 - not-found.tsx: shown when notFound() is called; renders inside the layout
 - loading.tsx: shown while an async page loads; layout stays visible
 - Pattern: keep label logic in lib/breadcrumbs.ts, component stays dumb
+
+## Route Groups in action
+- (auth)/layout.tsx = centered card, (dashboard)/layout.tsx = sidebar + topbar
+- Link from dashboard to /login switches the whole layout shell
+- Server Component by default; add "use client" only when hooks/state are needed (Topbar stays server)
+- Layout shape: Sidebar | (Topbar over main)  -> flex row, then flex-col inside
