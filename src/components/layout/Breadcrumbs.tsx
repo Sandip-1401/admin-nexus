@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getCrumbLabel } from "@/lib/breadcrumbs";
 
 export default function Breadcrumbs() {
   const pathname = usePathname();
@@ -12,7 +13,7 @@ export default function Breadcrumbs() {
       {segments.map((segment, index) => {
         const href = "/" + segments.slice(0, index + 1).join("/");
         const isLast = index === segments.length - 1;
-        const label = segment.charAt(0).toUpperCase() + segment.slice(1);
+        const label = getCrumbLabel(segments, index);
 
         return (
           <span key={href}>

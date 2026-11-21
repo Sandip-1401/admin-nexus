@@ -23,3 +23,15 @@
 - Each section can own its layout: analytics/layout.tsx (tabs), settings/layout.tsx (side menu)
 - Same pattern, different shell: layout = shape, page = content
 - redirect() used for section roots (/analytics, /settings) so they never 404
+
+## Dynamic routes (preview of Project 2)
+- [id] folder = dynamic segment, /users/1 and /users/2 use same page.tsx
+- params is a Promise in Next.js 16: const { id } = await params (needs async)
+- params values are always strings
+- notFound() shows 404 for unknown ids
+- Mistake to avoid: forgetting await params
+
+## Special files
+- not-found.tsx: shown when notFound() is called; renders inside the layout
+- loading.tsx: shown while an async page loads; layout stays visible
+- Pattern: keep label logic in lib/breadcrumbs.ts, component stays dumb
